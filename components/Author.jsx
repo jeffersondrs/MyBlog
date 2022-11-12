@@ -8,12 +8,12 @@ const Author = ({ author }) => {
           unoptimized
           className="align-middle rounded-full"
           alt={author.name}
-          height="80"
-          width="80"
+          height="100"
+          width="100"
           src={author.photo.url}
         />
       </div>
-      <h3 className="text-white my-4 text-xl font-bold">{author.name}</h3>
+      <h3 className="text-white mt-4 mb-4 text-xl font-bold">{author.name}</h3>
       <p className="text-white text-lg">{author.bio}</p>
     </div>
   );

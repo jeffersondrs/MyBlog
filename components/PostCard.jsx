@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import moment from "moment";
 import Link from "next/link";
 
@@ -18,8 +19,8 @@ const PostCard = ({ post }) => {
       <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
         <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
           <img
-            height="30px"
-            width="30px"
+            height="30"
+            width="30"
             className="align-middle rounded-full"
             alt={post.author.name}
             src={post.author.photo.url}
@@ -49,11 +50,15 @@ const PostCard = ({ post }) => {
           </span>
         </div>
       </div>
-      <p className="text-center text-lg text-gray-400 font-normal px-4 lg:px-20 mb-8">{post.excerpt}</p>
+      <p className="text-center text-lg text-gray-400 font-normal px-4 lg:px-20 mb-8">
+        {post.excerpt}
+      </p>
       <div className="text-center">
-      <Link href={`/post/${post.slug}`}>
-        <button className="transition dutarion-500 transform hover:-translate-y-1 inline-block bg-green-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">Continue reading</button>
-      </Link>
+        <Link href={`/post/${post.slug}`}>
+          <button className="transition dutarion-500 transform hover:-translate-y-1 inline-block bg-green-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
+            Continue reading
+          </button>
+        </Link>
       </div>
     </div>
   );

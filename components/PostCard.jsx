@@ -1,15 +1,18 @@
 import React from "react";
 import moment from "moment";
 import Link from "next/link";
+import Image from "next/image";
 
 const PostCard = ({ post }) => {
   return (
     <div className="bg-black/90 shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md pb-80 mb-6">
-        <img
-          className="object-top absolute h-80 w-full object-cover shadow-lg rounded-t-lg lg:rounded-lg"
+        <Image
+          className="object-top absolute h-80 w-full scale-110 object-cover shadow-lg rounded-t-lg lg:rounded-lg hover:scale-100 ease-in-out  transition"
           src={post.featuredImage.url}
           alt={post.title}
+          height="320"
+          width={100}
         />
       </div>
       <h1 className="transition duration-700 text-center mb-8 cursor-pointer text-white hover:text-green-500 text-3xl font-semibold">
@@ -17,7 +20,7 @@ const PostCard = ({ post }) => {
       </h1>
       <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
         <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
-          <img
+          <Image
             height="30"
             width="30"
             className="align-middle rounded-full"

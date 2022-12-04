@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -10,7 +10,11 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {/* <meta name="viewport" content="width=device-width,minimum-scale=1, initial-scale=1" /> */}
+          <link
+            rel="icon"
+            type="image/x-icon"
+            href="https://img.icons8.com/nolan/512/happy-skull.png"
+          />
         </Head>
         <body>
           <Main />

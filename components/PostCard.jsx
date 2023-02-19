@@ -5,10 +5,10 @@ import Image from "next/image";
 
 const PostCard = ({ post }) => {
   return (
-    <div className="bg-black/90 shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
+    <div className="bg-black/50 shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md pb-80 mb-6">
         <Image
-          className="object-top absolute h-80 w-full scale-110 object-cover shadow-lg rounded-t-lg lg:rounded-lg hover:scale-100 ease-in-out  transition"
+          className="object-top absolute h-80 w-full scale-110 object-cover shadow-lg hover:scale-100 ease-in-out rounded-sm transition"
           src={post.featuredImage.url}
           alt={post.title}
           height="320"

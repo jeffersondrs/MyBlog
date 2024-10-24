@@ -81,15 +81,15 @@ const CommentsForm = ({ slug }) => {
   };
 
   return (
-    <div className="bg-black shadow-lg rounded-lg p-8 pb-12 mb-8 text-white">
-      <h3 className="text-xl mb-8 font-semibold border-b pb-4">
-        Leave a Reply
+    <div className="bg-black/40 shadow-lg p-4 text-white mb-4">
+      <h3 className="text-sm mb-4 font-medium">
+        Deixe um comentário sobre este artigo
       </h3>
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea
           value={formData.comment}
           onChange={onInputChange}
-          className="p-4 outline-none w-full rounded-lg h-40 focus:ring-2 focus:ring-gray-200 bg-gray-300 text-black placeholder:text-black/50"
+          className="p-4 outline-none w-full h-40 focus:ring-2 focus:ring-gray-200 bg-gray-300 text-gray-700 text-xs placeholder:text-gray-400"
           name="comment"
           placeholder="Comment"
         />
@@ -99,7 +99,7 @@ const CommentsForm = ({ slug }) => {
           type="text"
           value={formData.name}
           onChange={onInputChange}
-          className="py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700"
+          className="py-2 px-4 outline-none w-full focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700 text-xs"
           placeholder="Name"
           name="name"
         />
@@ -107,13 +107,13 @@ const CommentsForm = ({ slug }) => {
           type="email"
           value={formData.email}
           onChange={onInputChange}
-          className="py-2 px-4 outline-none w-full rounded-lg focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700"
+          className="py-2 px-4 outline-none w-full focus:ring-2 focus:ring-gray-200 bg-gray-100 text-gray-700 text-xs"
           placeholder="Email"
           name="email"
         />
       </div>
       <div className="grid grid-cols-1 gap-4 mb-4">
-        <div>
+        <div className="flex flex-row gap-2 items-center justify-start">
           <input
             checked={formData.storeData}
             onChange={onInputChange}
@@ -122,26 +122,29 @@ const CommentsForm = ({ slug }) => {
             name="storeData"
             value="true"
           />
-          <label className="text-gray-500 cursor-pointer" htmlFor="storeData">
-            {" "}
-            Save my name, email in this browser for the next time I comment.
+          <label
+            className="text-gray-400 cursor-pointer text-xs"
+            htmlFor="storeData"
+          >
+            Salvar meus dados neste navegador para a próxima vez que eu
+            comentar.
           </label>
         </div>
       </div>
       {error && (
-        <p className="text-xs text-red-500">All fields are mandatory</p>
+        <p className="text-xs text-red-500 pb-2">Todos os campos são obrigatórios</p>
       )}
-      <div className="mt-8">
+      <div className="">
         <button
           type="button"
           onClick={handlePostSubmission}
-          className="transition duration-300 ease hover:bg-indigo-900 inline-block bg-green-500 text-lg font-semibold rounded-full text-white px-8 py-3 cursor-pointer"
+          className="transition duration-300 ease hover:bg-indigo-900 inline-block bg-green-500 text-xs font-medium text-white px-4 py-2 cursor-pointer"
         >
-          Post Comment
+          Postar Comentário
         </button>
         {showSuccessMessage && (
-          <span className="text-xl float-right font-semibold mt-3 text-green-500">
-            Comment submitted for review
+          <span className="text-xs float-right font-medium mt-3 text-green-500">
+            Comentário enviado com sucesso!
           </span>
         )}
       </div>

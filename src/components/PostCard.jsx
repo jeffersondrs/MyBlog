@@ -5,21 +5,19 @@ import Image from "next/image";
 
 const PostCard = ({ post }) => {
   return (
-    <div className="bg-black/50 shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
-      <div className="relative overflow-hidden shadow-md pb-80 mb-6">
+    <div className="bg-black/40 shadow-lg p-4 mb-4 gap-4 flex flex-col">
         <Image
-          className="object-top absolute h-80 w-full scale-110 object-cover shadow-lg hover:scale-100 ease-in-out rounded-sm transition"
+          className="w-full h-72 object-cover"
           src={post.featuredImage.url}
           alt={post.title}
-          height="320"
+          height={320}
           width={100}
         />
-      </div>
-      <h1 className="transition duration-700 text-center mb-8 cursor-pointer text-white hover:text-green-500 text-3xl font-semibold">
+      <h1 className="transition duration-700 text-center cursor-pointer text-white hover:text-green-500 text-lg font-medium">
         <Link href={`/post/${post.slug}`}>{post.title}</Link>
       </h1>
-      <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
-        <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8">
+      <div className="text-center items-center justify-center w-full flex flex-row gap-5 flex-wrap">
+        <div className="flex items-center justify-center">
           <Image
             height="30"
             width="30"
@@ -28,7 +26,7 @@ const PostCard = ({ post }) => {
             src={post.author.photo.url}
           />
 
-          <p className="inline align-middle text-gray-400 ml-2 text-lg">
+          <p className="inline align-middle text-gray-400 ml-2 text-xs">
             {post.author.name}
           </p>
         </div>
@@ -47,18 +45,18 @@ const PostCard = ({ post }) => {
               d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
             />
           </svg>
-          <span className="align-middle">
+          <span className="align-middle text-xs">
             {moment(post.createdAt).format("MMM DD, YYYY")}
           </span>
         </div>
       </div>
-      <p className="text-center text-lg text-gray-400 font-normal px-4 lg:px-20 mb-8">
+      <p className="text-center text-sm text-gray-400 font-normal px-4">
         {post.excerpt}
       </p>
       <div className="text-center">
         <Link href={`/post/${post.slug}`}>
-          <button className="transition dutarion-500 transform hover:-translate-y-1 inline-block bg-green-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
-            Continue reading
+          <button className="transition dutarion-500 transform inline-block bg-green-600 text-xs font-medium text-white py-2 px-4 cursor-pointer">
+            Continue lendo
           </button>
         </Link>
       </div>

@@ -15,17 +15,17 @@ const AdjacentPosts = ({ createdAt, slug }) => {
   }, [slug]);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-8 gap-12 mb-8">
+    <div className="grid grid-cols-1 lg:grid-cols-8 my-4">
       {dataLoaded && (
         <>
           {adjacentPost.previous && (
-            <div className={`${adjacentPost.next ? 'col-span-1 lg:col-span-4' : 'col-span-1 lg:col-span-8'} adjacent-post rounded-lg relative h-72`}>
-              <AdjacentPostCard post={adjacentPost.previous} position="LEFT" />
+            <div className={`${adjacentPost.next ? 'col-span-1 lg:col-span-4' : 'col-span-1 lg:col-span-8'} adjacent-post rounded-lg relative h-60`}>
+              <AdjacentPostCard post={adjacentPost.previous}/>
             </div>
           )}
           {adjacentPost.next && (
-            <div className={`${adjacentPost.previous ? 'col-span-1 lg:col-span-4' : 'col-span-1 lg:col-span-8'} adjacent-post rounded-lg relative h-72`}>
-              <AdjacentPostCard post={adjacentPost.next} position="RIGHT" />
+            <div className={`${adjacentPost.previous ? 'col-span-1 lg:col-span-4' : 'col-span-1 lg:col-span-8'} adjacent-post rounded-lg relative h-60`}>
+              <AdjacentPostCard post={adjacentPost.next} />
             </div>
           )}
         </>

@@ -9,14 +9,12 @@ const Categories = () => {
   }, []);
 
   return (
-    <div className="bg-black text-white shadow-lg rounded-lg p-8 mb-8 pb-12">
-      <h3 className="text-cl mb-8 font-semibold border-b pb-4">Categories</h3>
+    <div className="bg-black/40 text-white shadow-lg p-4 mb-2">
+      <h3 className="text-base mb-2 border-b pb-1">Categories</h3>
       {categories.map((category, index) => (
         <Link key={index} href={`/category/${category.slug}`}>
           <span
-            className={`hover:text-green-500 cursor-pointer block ${
-              index === categories.length - 1 ? "border-b-0" : "border-b"
-            } pb-3 mb-3`}
+            className={`hover:text-green-500 cursor-pointer block pb-1 mb-3 text-xs`}
           >
             {category.name}
           </span>
